@@ -353,34 +353,7 @@
     .custom-cursor, .custom-cursor-dot { display: none; }
     *{ cursor: auto !important; }
   }
-  /* CORREÇÃO DEFINITIVA PARA O CARD DE RELATÓRIOS NO MOBILE */
-@media (max-width: 768px) {
-  /* 1. Garante que o bloco preto principal contenha tudo e esconda vazamentos */
-  .black-section, 
-  div[class*="black"], 
-  .card-relatorios {
-    position: relative !important;
-    overflow: hidden !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 2. Força o elemento "Mais Conversão" a respeitar o container ou empilha ele abaixo */
-  /* Substitua ".card-mais-conversao" pela classe exata ou seletor do elemento branco da direita */
-  .card-mais-conversao, 
-  .badge-conversao, 
-  div[style*="position: absolute"] {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin-top: 12px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
+  
 </style>
 </head>
 <body>
@@ -612,14 +585,20 @@
     </div>
   </section>
 
-  <div class="stat-block reveal">
+<div class="stat-block reveal" id="market-stats-card">
     <div class="eyebrow">RELATÓRIOS DE MERCADO</div>
     <h2>94% dos usuários abandonam sites lentos ou instáveis antes mesmo de conhecer o seu produto.</h2>
+    
     <div class="stat-pills">
-      <div class="stat-pill dark">Mais Performance ↑</div>
-      <div class="stat-pill light">Mais Conversão ↑</div>
+      <!-- Botão/Pill interativo 1 -->
+      <div class="stat-pill dark active" onclick="switchStatTab(this, 'performance')">
+        Mais Performance ↑
+      </div>
+      <!-- Botão/Pill interativo 2 -->
+      <div class="stat-pill light" onclick="switchStatTab(this, 'conversion')">
+        Mais Conversão ↑
+      </div>
     </div>
-  </div>
 
   <section class="projects reveal">
     <div class="eyebrow">PORTFÓLIO</div>
