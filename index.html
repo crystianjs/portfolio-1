@@ -11,6 +11,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  body, main {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Garante que o container pai do cartão 94% contenha os elementos no mobile */
+@media (max-width: 768px) {
+  /* Substitua .cartao-94 pela classe ou ID exato do bloco preto da seção */
+  .cartao-94 {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  /* Se o card "Mais Conversão" estiver posicionado de forma absoluta, ajuste para relative no mobile */
+  .cartao-mais-conversao {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 12px;
+    width: 100% !important;
+  }
+}
   :root{
     --bg:#ffffff; --fg:#111114; --muted:#6b6b70; --card:#f8f8f6; --border:#e3e3e0;
     --black:#0b0b0d; --white:#ffffff; --accent:#2563eb;
@@ -337,7 +359,7 @@
   .foot-links{display:flex; align-items:center; gap:14px; color:var(--muted); font-size:13.5px;}
   .socials{display:flex; gap:10px;}
   .socials a{width:38px;height:38px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center; transition: all 0.3s;}
-  .socials a:hover{ background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-3px); }
+  .socials a:hover{ background: #fff; color: #fff; border-color: var(--accent); transform: translateY(-3px); }
   .socials svg{width:16px;height:16px;}
 
   @media (max-width:860px){
@@ -438,9 +460,14 @@
     </div>
   </div>
 </div>
-<div style="text-align: center; padding: -10px; margin-top: 50px; color: #000; font-size: 24px; font-weight: bold;">PROTÓTIPO DA AGENCIA DE TURISMO - MARAZUL</div>
-<div style="text-align: center; padding: 40px; padding-top: 0px; color: #666; font-size: 18px;">
-  <p>"Tenha um site que seja aquilo que o seu cliente deseja"</p>
+<!-- Cabeçalho do Protótipo -->
+<div style="text-align: center; margin: 40px auto 20px auto; max-width: 800px; padding: 0 20px;">
+  <h2 style="font-family: 'Manrope', sans-serif; font-size: 22px; font-weight: 800; color: #111114; letter-spacing: -0.5px; margin-bottom: 8px; text-transform: uppercase;">
+    PROTÓTIPO DA AGÊNCIA DE TURISMO - MARAZUL
+  </h2>
+  <p style="font-family: 'Manrope', sans-serif; font-size: 16px; color: #6b6b70; font-weight: 500; margin: 0;">
+    "Tenha um site que seja aquilo que o seu cliente deseja"
+  </p>
 </div>
 <!-- FRAME INTERATIVO DO SITE MARAZUL -->
   <div class="live-iframe-wrapper" style="width: 100%; background: #111; border-radius: 16px; overflow: hidden; border: 1px solid rgb(255, 255, 255); box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
@@ -449,7 +476,7 @@
         <span style="width: 10px; height: 10px; background: #ff5f56; border-radius: 50%; display: inline-block;"></span>
         <span style="width: 10px; height: 10px; background: #ffbd2e; border-radius: 50%; display: inline-block;"></span>
         <span style="width: 10px; height: 10px; background: #27c93f; border-radius: 50%; display: inline-block;"></span>
-        <span style="margin-left: 15px; font-size: 12px; color: #888; font-family: monospace; background: #111; padding: 4px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); flex-grow: 1; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">https://marazulrec.netlify.app</span>
+        <span style="margin-left: 15px; font-size: 12px; color: #888; background: #111; padding: 4px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); flex-grow: 1; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">https://marazulrec.netlify.app</span>
     </div>
     <!-- Iframe incorporado apontando para o Netlify -->
     <iframe src="https://marazulrec.netlify.app/" title="Marazul Turismo" style="width: 100%; height: 550px; border: none; display: block;" loading="lazy"></iframe>
@@ -678,9 +705,9 @@
     <div class="foot-links">
       <span>Política de privacidade</span>
       <div class="socials">
-        <a href="https://wa.me/5511984292864" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 0 1-4.24-1.22l-.3-.19-3.13.82.83-3.05-.2-.31A7.93 7.93 0 1 1 12 20z"/></svg></a>
-        <a href="https://github.com/crystianjs" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3.9V21H3.5zM10.2 8.75h3.74v1.68h.05c.52-.98 1.8-2.02 3.7-2.02 3.96 0 4.7 2.6 4.7 5.98V21h-3.9v-5.86c0-1.4-.03-3.2-1.96-3.2-1.96 0-2.26 1.53-2.26 3.1V21h-3.9z"/></svg></a>
+        <a href="https://wa.me/5511984292864" target="_blank" rel="noopener" style="color: #000;" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 0 1-4.24-1.22l-.3-.19-3.13.82.83-3.05-.2-.31A7.93 7.93 0 1 1 12 20z"/></svg></a>
+        <a href="https://github.com/crystianjs" target="_blank" rel="noopener" style="color: #000;" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/crystian-jesus-a66622219/" target="_blank" rel="noopener" style="color: #000;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3.9V21H3.5zM10.2 8.75h3.74v1.68h.05c.52-.98 1.8-2.02 3.7-2.02 3.96 0 4.7 2.6 4.7 5.98V21h-3.9v-5.86c0-1.4-.03-3.2-1.96-3.2-1.96 0-2.26 1.53-2.26 3.1V21h-3.9z"/></svg></a>
       </div>
     </div>
   </footer>
