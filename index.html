@@ -11,28 +11,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body, main {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* Garante que o container pai do cartão 94% contenha os elementos no mobile */
-@media (max-width: 768px) {
-  /* Substitua .cartao-94 pela classe ou ID exato do bloco preto da seção */
-  .cartao-94 {
-    position: relative !important;
-    overflow: hidden !important;
-  }
-  
-  /* Se o card "Mais Conversão" estiver posicionado de forma absoluta, ajuste para relative no mobile */
-  .cartao-mais-conversao {
-    position: relative !important;
-    right: auto !important;
-    bottom: auto !important;
-    margin-top: 12px;
-    width: 100% !important;
-  }
-}
   :root{
     --bg:#ffffff; --fg:#111114; --muted:#6b6b70; --card:#f8f8f6; --border:#e3e3e0;
     --black:#0b0b0d; --white:#ffffff; --accent:#2563eb;
@@ -375,6 +353,34 @@
     .custom-cursor, .custom-cursor-dot { display: none; }
     *{ cursor: auto !important; }
   }
+  /* CORREÇÃO DEFINITIVA PARA O CARD DE RELATÓRIOS NO MOBILE */
+@media (max-width: 768px) {
+  /* 1. Garante que o bloco preto principal contenha tudo e esconda vazamentos */
+  .black-section, 
+  div[class*="black"], 
+  .card-relatorios {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Força o elemento "Mais Conversão" a respeitar o container ou empilha ele abaixo */
+  /* Substitua ".card-mais-conversao" pela classe exata ou seletor do elemento branco da direita */
+  .card-mais-conversao, 
+  .badge-conversao, 
+  div[style*="position: absolute"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin-top: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
 </style>
 </head>
 <body>
